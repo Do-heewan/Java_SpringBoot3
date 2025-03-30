@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![alt text](images/01장타이틀.png)
+![alt text](images/책표지.png)
 
 </div>
 
