@@ -181,7 +181,7 @@
 ![서버재시작](https://github.com/user-attachments/assets/3d26ecaf-1c5f-4345-8404-e57ba26ea047)
 
 
-#### 03단계 : http://localhost:8080/test로 접속
+#### 03단계 : http://localhost:8080/test 로 접속
 ![test](https://github.com/user-attachments/assets/33e0d5d0-12d7-4ae2-a02c-d8a27d1996f6)
 
 
@@ -199,6 +199,8 @@
 |spring-boot-starter-validation|유효성 검사를 위해 필요한 의존성 모음|
 |spring-boot-starter-actuator|모니터링을 통해 애플리케이션에서 제공하는 다양한 정보를 제공하기 쉽게 하는 의존성 모음|
 |spring-boot-starter-data-jpa|ORM을 사용하기 위한 인터페이스의 모음인 JPA를 더 쉽게 사용하기 위한 의존성 모음|
+
+<br>
 
 #### 01단계 : build.gradle 파일
 ```
