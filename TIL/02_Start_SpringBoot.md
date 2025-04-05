@@ -2,6 +2,10 @@
 
 ![타이틀](https://github.com/user-attachments/assets/86737439-c3be-41f6-9297-99a9c80408ab)
 
+---
+
+<br>
+
 ### 2.0 그림으로 이해하는 프로젝트
 ![그림프로젝트](https://github.com/user-attachments/assets/da29764e-9eb9-4685-8db6-0c24771e6d6d)
 
@@ -116,6 +120,8 @@
 
 스프링은 스프링 컨테이너를 제공한다. 스프링 컨테이너는 빈을 생성하고 관리한다. 즉 빈이 생성되고 소멸되기까지의 생명주기를 이 스프링 컨테이너가 관리하는 것이다. 또한 `@Autowired`같은 애너테이션을 사용해 빈을 주입받을 수 있게 DI를 지원하기도 한다.
 
+<br>
+
 **빈이란?**
 
 빈은 스프링 컨테이너가 생성하고 관리하는 객체이다. 스프링은 빈을 스프링 컨테이너에 등록하기 위해 XML 파일 설정, 애너테이션 추가 등의 방법을 제공한다.
@@ -157,3 +163,139 @@
 <br>
 
 ### 2.3 스프링 부트3 둘러보기
+
+**스프링 부트3 예제 만들기**
+
+#### 01단계 : TestController.java 작성
+```java
+    @RestController
+    public class TestController {
+        @GetMapping("/test")
+        public String test() {
+            return "Hello, world!";
+        }
+    }
+```
+
+#### 02단계 : 스프링 부트 서버 재시작
+![서버재시작](https://github.com/user-attachments/assets/3d26ecaf-1c5f-4345-8404-e57ba26ea047)
+
+
+#### 03단계 : http://localhost:8080/test로 접속
+![test](https://github.com/user-attachments/assets/33e0d5d0-12d7-4ae2-a02c-d8a27d1996f6)
+
+
+<br>
+
+**스프링 부트 스타터 살펴보기**
+
+스프링 부트 스타터는 의존성이 모여 있는 그룹이다. 스타터를 사용하면 필요한 기능을 간편하게 설정할 수 있다.
+>스타터는 spring-boot-starter-{작업유형} 이라는 명명규칙이 있다.
+
+|스타터|설명|
+|-----|------------|
+|spring-boot-starter-web|Spring MVC를 사용해서 RESTful 웹 서비스를 개발할 때 필요한 의존성 모음|
+|spring-boot-starter-test|스프링 애플리케이션을 테스트하기 위해 필요한 의존성 모음|
+|spring-boot-starter-validation|유효성 검사를 위해 필요한 의존성 모음|
+|spring-boot-starter-actuator|모니터링을 통해 애플리케이션에서 제공하는 다양한 정보를 제공하기 쉽게 하는 의존성 모음|
+|spring-boot-starter-data-jpa|ORM을 사용하기 위한 인터페이스의 모음인 JPA를 더 쉽게 사용하기 위한 의존성 모음|
+
+#### 01단계 : build.gradle 파일
+```
+    dependencies {
+        testImplementation platform('org.junit:junit-bom:5.10.0')
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+        implementation 'org.springframework.boot:spring-boot-starter-web'
+    }
+```
+web 스타터와 test 스타터가 의존성으로 명시되어 있음을 확인할 수 있다.
+
+#### 02단계 : web 스타터 확인
+![web스타터](https://github.com/user-attachments/assets/c3719de2-bb39-44cc-bf80-edd89f1d3d71)
+
+#### 03단계 : test 스타터 확인
+![test스타터](https://github.com/user-attachments/assets/c1f0a2a5-41ef-4561-926f-0c172b5da6d3)
+
+<br>
+
+**자동 구성**
+
+자동 구성은 스프링 부트의 중요한 개념이다. 스프링 부트에서는 애플리케이션이 최소한의 설정만으로도 실행되게 여러 부분을 자동으로 구성한다. 
+
+>**개발을 진행하다가 내가 구성하지 않은 부분인데 스프링에서 자동으로 어떻게 구성하였는지 확인할 상황이 올 수 있기에 이를 알아야 한다.**
+
+스프링 부트는 서버를 시작할 때 구성 파일을 읽어와 설정한다.
+>이를 자동설정이라 하고, 자동 설정은 META-INF에 있는 spring.factories 파일에 담겨 있다.
+
+---
+
+<br>
+
+### 2.4 스프링 부트3 코드 이해하기
+
+**@SpringBootApplication 이해하기**
+
+#### 01단계 : SpringBootDeveloperApplication.java
+
+```java
+    @SpringBootApplication
+    public class SpringBootDeveloperApplication {
+        public static void main(String[] args) {
+            SpringApplication.run(SpringBootDeveloperApplication.class, args);
+        }
+    }
+```
+
+이 클래스는 자바의 `main()` 메서드와 같은 역할을 한다. `@SpringBootApplication` 애너테이션을 추가하면 스프링 부트 사용에 필요한 기본 설정을 해준다. 
+
+`SpringApplication.run()` 메서드는 애플리케이션을 실행한다. 첫 번째 인수는 스프링 부트3 애플리케이션의 메인 클래스로 사용할 클래스, 두 번째 인수는 커멘드 라인의 인수들을 전달한다.
+
+#### 02단계 : @SpringBootApplication의 의미 파악
+
+```java
+    @Target(ElementType.TYPE) 
+    @Retention(RetentionPolicy.RUNTIME) 
+    @Documented 
+    @Inherited 
+    @SpringBootConfiguration // 스프링 부트 관련 설정 
+    @ComponentScan(excludeFilters = { 
+    @Filter(type = FilterType.CUSTOM, 
+        // 사용자가 등록한 빈을 읽고 등록 
+        classes = TypeExcludeFilter . class), 
+        @Filter(type = FilterType . CUSTOM, 
+        classes = Aut oConfigurationExcludeFi l t er.class) 
+    }) 
+    @EnableAut oConfiguration // 자동으로 등록된 빈을 읽고 등록 
+    public @interface SpringBootApplication {
+    }
+```
+
+#### @springBootConfiguration
+- 스프링 부트 관련 설정을 나타내는 애너테이션이다. `@Configuration`을 상속해서 만든 애너테이션이다.
+
+#### @ComponentScan
+- 사용자가 등록한 빈을 읽고 등록하는 애너테이션이다. `@Component`라는 애너테이션을 가진 클래스들을 찾아 빈으로 등록하는 역할을 한다.
+
+![ComponentScan](https://github.com/user-attachments/assets/eb1c5d49-a946-49c6-bcac-e73ae4461a26)
+
+#### @EnableAutoConfiguration
+- 스프링 부트에서 자동 구성을 활성화하는 애너테이션이다. 스프링 부트 서버가 실행될 때 스프링 부트의 메타파일을 읽고 정의된 설정들을 자동으로 구성하는 역할을 수행한다.
+
+<br>
+
+**테스트 컨트롤러 살펴보기**
+
+```java
+    @RestController
+    public class TestController {
+        @GetMapping("/test") // /test GET 요청이 들어오면 
+        public String test() { // test() 실행
+            return "Hello, World!";
+        }
+    }
+```
+
+`@RestController`는 라우터 역할을 하는 애너테이션이다. 라우터란 HTTP 요청과 메서드를 연결하는 장치이다.
+
+이 애너테이션이 있어야 클라이언트의 요청에 맞는 메서드를 실행할 수 있다. 지금의 경우 TestController를 라우터로 지정해 /test라는 GET요청이 왔을 때 test() 메서드를 실행하도록 구성한 것이다.
+
