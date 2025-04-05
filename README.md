@@ -2,8 +2,10 @@
 
 <div align="center">
 
-![표지](https://private-user-images.githubusercontent.com/139729135/428518263-f6fe6047-7833-43ae-b7c8-4f044eefa7b5.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDM0MDcwNTEsIm5iZiI6MTc0MzQwNjc1MSwicGF0aCI6Ii8xMzk3MjkxMzUvNDI4NTE4MjYzLWY2ZmU2MDQ3LTc4MzMtNDNhZS1iN2M4LTRmMDQ0ZWVmYTdiNS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMzMxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDMzMVQwNzM5MTFaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0xNDM1ZGM4MzY5NTc4ZmNjMWZhNzU4Yzc2MTU2MzRiMDFiMzk3YjA1YzFlMzlkMDcwNTc1NzFhYzQ0NzM0ZWQ0JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.PIGQEni-4KG_tSdCkZTTBnX3uLG1m6YtBKZX5hdHtFs)
+![표지](https://github.com/user-attachments/assets/525d8c57-4363-4365-a468-fb9c119002c6)
 
 </div>
+
+---
 
 ### [SpringBoot3 01](https://github.com/Do-heewan/Java_SpringBoot3/blob/main/TIL/01_Java_BackEnd.md)
