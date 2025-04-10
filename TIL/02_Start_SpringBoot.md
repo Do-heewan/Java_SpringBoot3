@@ -70,9 +70,9 @@
 자바 코드를 작성해 객체를 생성할 때, 지금까지는 객체가 필요한 곳에서 직접 생성하였다.
 
 ```java
-    public class A {
-        b = new B(); // 클래스 A에서 new 키워드로 클래스 B의 객체 생성
-    }
+public class A {
+    b = new B(); // 클래스 A에서 new 키워드로 클래스 B의 객체 생성
+}
 ```
 
 제어의 역전은 다른 객체를 직접 생성하거나 제어하는 것이 아니라 외부에서 관리하는 객체를 가져와 사용하는 것을 말한다.
@@ -80,9 +80,9 @@
 위의 코드에서 제어의 역전을 적용하면 다음과 같다.
 
 ```java
-    public class A {
-        private B b; // 코드에서 객체를 생성하지 않음. 어디선가 받아온 객체를 b에 할당
-    }
+public class A {
+    private B b; // 코드에서 객체를 생성하지 않음. 어디선가 받아온 객체를 b에 할당
+}
 ```
 
 실제로 스프링은 스프링 컨테이너가 객체를 관리, 제공하는 역할을 한다.
@@ -94,11 +94,11 @@
 제어의 역전을 구현하기 위해 사용하는 방법이다. DI는 어떤 클래스가 다른 클래스에 의존한다는 뜻이다.
 
 ```java
-    public class A {
-        // A에서 B를 주입받음
-        @Autowired
-        B b;
-    }
+public class A {
+    // A에서 B를 주입받음
+    @Autowired
+    B b;
+}
 ```
 
 `@Autowired`라는 애너테이션은 스프링 컨테이너에 있는 `빈`을 주입하는 역할을 한다.
@@ -127,9 +127,9 @@
 빈은 스프링 컨테이너가 생성하고 관리하는 객체이다. 스프링은 빈을 스프링 컨테이너에 등록하기 위해 XML 파일 설정, 애너테이션 추가 등의 방법을 제공한다.
 
 ```java
-    @Component // 클래스 MyBean 빈으로 등록
-    public class MyBean {
-    }
+@Component // 클래스 MyBean 빈으로 등록
+public class MyBean {
+}
 ```
 
 <br>
@@ -168,13 +168,13 @@
 
 #### 01단계 : TestController.java 작성
 ```java
-    @RestController
-    public class TestController {
-        @GetMapping("/test")
-        public String test() {
-            return "Hello, world!";
-        }
+@RestController
+public class TestController {
+    @GetMapping("/test")
+    public String test() {
+        return "Hello, world!";
     }
+}
 ```
 
 #### 02단계 : 스프링 부트 서버 재시작
@@ -185,6 +185,7 @@
 ![test](https://github.com/user-attachments/assets/33e0d5d0-12d7-4ae2-a02c-d8a27d1996f6)
 
 
+<br>
 <br>
 
 **스프링 부트 스타터 살펴보기**
@@ -210,7 +211,7 @@
         implementation 'org.springframework.boot:spring-boot-starter-web'
     }
 ```
-web 스타터와 test 스타터가 의존성으로 명시되어 있음을 확인할 수 있다.
+>web 스타터와 test 스타터가 의존성으로 명시되어 있음을 확인할 수 있다.
 
 #### 02단계 : web 스타터 확인
 ![web스타터](https://github.com/user-attachments/assets/c3719de2-bb39-44cc-bf80-edd89f1d3d71)
@@ -240,12 +241,12 @@ web 스타터와 test 스타터가 의존성으로 명시되어 있음을 확인
 #### 01단계 : SpringBootDeveloperApplication.java
 
 ```java
-    @SpringBootApplication
-    public class SpringBootDeveloperApplication {
-        public static void main(String[] args) {
-            SpringApplication.run(SpringBootDeveloperApplication.class, args);
-        }
+@SpringBootApplication
+public class SpringBootDeveloperApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(SpringBootDeveloperApplication.class, args);
     }
+}
 ```
 
 이 클래스는 자바의 `main()` 메서드와 같은 역할을 한다. `@SpringBootApplication` 애너테이션을 추가하면 스프링 부트 사용에 필요한 기본 설정을 해준다. 
@@ -255,21 +256,21 @@ web 스타터와 test 스타터가 의존성으로 명시되어 있음을 확인
 #### 02단계 : @SpringBootApplication의 의미 파악
 
 ```java
-    @Target(ElementType.TYPE) 
-    @Retention(RetentionPolicy.RUNTIME) 
-    @Documented 
-    @Inherited 
-    @SpringBootConfiguration // 스프링 부트 관련 설정 
-    @ComponentScan(excludeFilters = { 
-    @Filter(type = FilterType.CUSTOM, 
-        // 사용자가 등록한 빈을 읽고 등록 
-        classes = TypeExcludeFilter . class), 
-        @Filter(type = FilterType . CUSTOM, 
-        classes = Aut oConfigurationExcludeFi l t er.class) 
-    }) 
-    @EnableAut oConfiguration // 자동으로 등록된 빈을 읽고 등록 
-    public @interface SpringBootApplication {
-    }
+@Target(ElementType.TYPE) 
+@Retention(RetentionPolicy.RUNTIME) 
+@Documented 
+@Inherited 
+@SpringBootConfiguration // 스프링 부트 관련 설정 
+@ComponentScan(excludeFilters = { 
+@Filter(type = FilterType.CUSTOM, 
+    // 사용자가 등록한 빈을 읽고 등록 
+    classes = TypeExcludeFilter . class), 
+    @Filter(type = FilterType . CUSTOM, 
+    classes = Aut oConfigurationExcludeFi l t er.class) 
+}) 
+@EnableAut oConfiguration // 자동으로 등록된 빈을 읽고 등록 
+public @interface SpringBootApplication {
+}
 ```
 
 #### @springBootConfiguration
@@ -288,13 +289,13 @@ web 스타터와 test 스타터가 의존성으로 명시되어 있음을 확인
 **테스트 컨트롤러 살펴보기**
 
 ```java
-    @RestController
-    public class TestController {
-        @GetMapping("/test") // /test GET 요청이 들어오면 
-        public String test() { // test() 실행
-            return "Hello, World!";
-        }
+@RestController
+public class TestController {
+    @GetMapping("/test") // /test GET 요청이 들어오면 
+    public String test() { // test() 실행
+        return "Hello, World!";
     }
+}
 ```
 
 `@RestController`는 라우터 역할을 하는 애너테이션이다. 라우터란 HTTP 요청과 메서드를 연결하는 장치이다.
