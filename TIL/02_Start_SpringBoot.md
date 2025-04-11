@@ -9,7 +9,9 @@
 ### 2.0 그림으로 이해하는 프로젝트
 ![그림프로젝트](https://github.com/user-attachments/assets/da29764e-9eb9-4685-8db6-0c24771e6d6d)
 
-다음 그림은 
+    1. 웹 브라우저가 서버에 /test를 GET으로 요청하였다.
+    2. 서버의 TestController 클래스가 `@GetMapping("/test")`가 있는 test() 메소드를 실행하여 요청을 처리한다. 
+    3. 웹에는 Hello, Wolrd!가 출력된다.
 
 ---
 
