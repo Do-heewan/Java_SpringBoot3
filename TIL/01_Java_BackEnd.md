@@ -133,12 +133,16 @@ NoSQL은 이러한 RDB의 문제를 해결하기 위해 등장했다.
 
 ---
 
-<!--
 <br>
 
-    백엔드 : DNS, CIDR
-    API(Appication Programming Interface) 개발.
-    Bean
-    애너테이션 정의
-    의존성, 의존성 주입
-    -->
+## 추가 개념
+
+### DNS
+DNS(Domain Name System)는 IP주소를 대신하는 도메인의 이름이다.
+
+### CIDR
+IP 주소 뒤에 슬래시(/) 뒤에 숫자를 붙이는 표기법
+>192.168.0.0/24 -> 총 32비트 중 24비트를 가림. [192.168.0.0 ~ 192.168.0.255]
+
+### API
+API(Application Programming Interface)란 소프트웨어 프로그램이 서로 통신할 수 있도록 정의된 규칙과 프로토콜이다. API를 통해 두 애플리케이션이 요청과 응답을 통해 통신할 수 있다.
