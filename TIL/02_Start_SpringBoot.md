@@ -304,3 +304,4 @@ public class TestController {
 
 이 애너테이션이 있어야 클라이언트의 요청에 맞는 메서드를 실행할 수 있다. 지금의 경우 TestController를 라우터로 지정해 /test라는 GET요청이 왔을 때 test() 메서드를 실행하도록 구성한 것이다.
 
+---
