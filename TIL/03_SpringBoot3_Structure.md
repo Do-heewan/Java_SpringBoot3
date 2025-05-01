@@ -125,8 +125,8 @@ dependencies {
 ```java
 @RestController
 public class TestController {
-    @Autowired // TestService 빈 주입
-    TestService testService;
+    @Autowired 
+    TestService testService; // TestService 빈 주입
 
     @GetMapping("/test")
     public List<Member> getAllMembers() {
@@ -142,10 +142,10 @@ public class TestController {
 @Service
 public class TestService {
     @Autowired
-    MemberRepository memberRepository; // 1. 빈 주입
+    MemberRepository memberRepository; // 빈 주입
 
     public List<Member> getAllMembers() {
-        return memberRepository.findAll(); // 2. 멤버 목록 얻기
+        return memberRepository.findAll(); // 멤버 목록 얻기
     }
 }
 ```
