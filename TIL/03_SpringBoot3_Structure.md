@@ -120,7 +120,7 @@ dependencies {
 
 ### 프레젠테이션, 서비스, 퍼시스턴스 계층 만들기
 
-1. 프레젠테이션 계층에 속하는 컨트롤러 관련 코드를 `TestController.java`에 작성한다.
+1. 프레젠테이션 계층에 속하는 **컨트롤러 관련 코드**를 `TestController.java`에 작성한다.
 
 ```java
 @RestController
@@ -136,7 +136,7 @@ public class TestController {
 }
 ```
 
-2. 비즈니스 계층 코드를 `TestService.java`에 작성한다.
+2. **비즈니스 계층 코드**를 `TestService.java`에 작성한다.
 
 ```java
 @Service
@@ -154,7 +154,7 @@ public class TestService {
 
 ![image](https://github.com/user-attachments/assets/332fb616-cb25-4083-81f7-bc39abb8a22d)
 
-3. 퍼시스턴스 계층 코드를 `Member.java`에 작성한다.
+3. **퍼시스턴스 계층 코드**를 `Member.java`에 작성한다.
 
 ```java
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -200,9 +200,9 @@ public interface MemberRepository extends JpaRepository<Member, Long> {
 1. resource 디렉토리에 `data.sql` 파일을 생성하고 다음과 같이 작성한다.
 
 ```sql
-INSERT INTO member (id, name) VALUES (1, "노희완");
-INSERT INTO member (id, name) VALUES (2, "이현진");
-INSERT INTO member (id, name) VALUES (3, "name 3");
+INSERT INTO member (id, name) VALUES (1, 'name 1');
+INSERT INTO member (id, name) VALUES (2, 'name 2');
+INSERT INTO member (id, name) VALUES (3, '노희완');
 ```
 
 2. application.yml 파일에 다음과 같이 작성한다.
@@ -226,7 +226,7 @@ show-sql, format_sql 옵션은 애플리케이션 실행 과정에 데이터베�
 
 ![create table](https://github.com/user-attachments/assets/e9f65078-4268-4203-bbc5-91591a95cf58)
 
-4. 포스트맨으로 HTTP 요청을 해본다. [GET]으로 http://127.0.0.1:8080/test 를 [Send] 하고 결과를 확인해보자.
+4. 포스트맨으로 HTTP 요청을 해본다. [GET]으로 http://127.0.0.1:8080/test 에 [Send] 하고 결과를 확인해보자.
 
 ![포스트맨](https://github.com/user-attachments/assets/33b2e475-da2d-4f8c-88d1-7d4f49c3211b)
 
