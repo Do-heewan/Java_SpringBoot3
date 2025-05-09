@@ -2,6 +2,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 public class JUnitTest {
     @DisplayName("1+2는 3이다.") // 테스트 이름
     @Test // 테스트 메서드
@@ -21,6 +23,6 @@ public class JUnitTest {
         int sum = 3;
 
         Assertions.assertEquals(sum, a + b); // 실패 케이스
+        assertThat(sum).isEqualTo(a+b);
     }
 }
-
