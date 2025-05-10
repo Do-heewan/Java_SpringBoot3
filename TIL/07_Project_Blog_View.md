@@ -33,11 +33,10 @@ h1 태그에는 ${이름}이 text 어트리뷰트로 할당되어 있다. 이것
 ![image](https://github.com/user-attachments/assets/cfffb4a7-9523-4f51-a7aa-cf3dea3a9e7b)
 
 #### 타임리프 표현식과 문법
+|||
+|---|----|
+|![표현식](https://github.com/user-attachments/assets/c74289dd-a4f9-4784-98bc-c44920f849e6)|![문법](https://github.com/user-attachments/assets/1d69ef0e-953f-49d8-8ddc-c670800d9669)|
 
-<p align = "center">
-    <img src = "https://github.com/user-attachments/assets/c74289dd-a4f9-4784-98bc-c44920f849e6">
-    <img src = "https://github.com/user-attachments/assets/1d69ef0e-953f-49d8-8ddc-c670800d9669">
-</p>
 
 <br>
 
