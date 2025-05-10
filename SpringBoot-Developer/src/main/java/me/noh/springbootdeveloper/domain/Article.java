@@ -4,6 +4,10 @@ import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+
+import java.time.LocalDateTime;
 
 @Getter
 @Entity // 엔티티 지정
@@ -31,4 +35,12 @@ public class Article {
         this.title = title;
         this.content = content;
     }
+
+    @CreatedDate
+    @Column(name = "created_at")
+    private LocalDateTime createAt;
+
+    @LastModifiedDate // 엔티티가 수정될 때 수정 시간 저장
+    @Column(name = "updated_at")
+    private LocalDateTime updateAt;
 }
