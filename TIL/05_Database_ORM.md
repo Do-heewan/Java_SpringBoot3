@@ -584,3 +584,68 @@ void update() {
 
 3. 이번 코드에는 `@Transactional` 애너테이션이 보이지 않는다. 그 이유는 `@DataJpaTest` 애너테이션을 사용하였기 때문이다.
 
+---
+
+<Br>
+
+## 5.5 예제 코드 살펴보기
+
+### `Member.java` 살펴보기
+
+```java
+@Getter
+@Entity // 1. 엔티티 지정
+@NoArgsConstructor(access = AccessLevel.PROTECTED) // 2. 기본 생성자
+@AllArgsConstructor
+public class Member {
+    public void changeName(String name) {
+        this.name = name;
+    }
+
+    @Id // 3. id 필드를 기본키로 지정
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // 4. 기본키를 자동으로 1씩 증가
+    @Column(name = "id", updatable = false) 
+    private Long id; // DB 테이블의 'id' 컬럼과 매칭
+    
+    @Column(name = "name", nullable = false) // 5. name이라는 not null 컬럼과 매핑
+    private String name; // DB 테이블의 'name' 컬럼과 매칭
+}
+```
+
+1. `@Entity` 애너테이션은 Member 객체를 JPA가 관리하는 엔티티로 지정한다.
+
+>즉 Member 클래스와 실제 데이터베이스의 테이블을 매핑시킨다.
+
+`@Entity`의 속성인 name을 사용하여 테이블과 매핑 시킬 수 있다. 생략하면 클래스와 이름이 같은 테이블과 매핑된다.
+
+```java
+@Entity(name = "member_list")
+public class Article {
+
+}
+```
+
+2. protected 기본 생성자이다. 엔티티는 반드시 기본 생성자가 있어야 하고, 접근 제어자는 public 또는 protected 여야 한다.
+
+3. `@Id`는 Long 타입의 id 필드를 테이블의 기본키로 지정한다.
+
+4. `@GeneratedValue`는 기본키의 생성 방식을 결정한다.
+
+5. `@Column` 애너테이션은 데이터베이스의 컬럼과 필드를 매핑해준다.
+
+<br>
+
+### `MemberRepository.java` 살펴보기
+```java
+@Repository
+public interface MemberRepository extends JpaRepository<Member, Long> {
+    Optional<Member> findByName(String name);
+}
+```
+
+리포지터리는 엔티티에 있는 데이터들을 조회하거나 저장, 변경, 삭제를 할 때 사용하는 인터페이스로, 스프링 데이터 JPA에서 제공하는 인터페이스인 JpaRepository 클래스를 상속받아 간단하게 구현할 수 있다.
+
+![리포지토리](https://github.com/user-attachments/assets/7c0bfe03-7205-4c45-aabc-95be93b6626e)
+
+---
+
