@@ -34,7 +34,10 @@ h1 태그에는 ${이름}이 text 어트리뷰트로 할당되어 있다. 이것
 
 #### 타임리프 표현식과 문법
 
-![표현식](https://github.com/user-attachments/assets/c74289dd-a4f9-4784-98bc-c44920f849e6)![문법](https://github.com/user-attachments/assets/1d69ef0e-953f-49d8-8ddc-c670800d9669)
+<p align = "center">
+    <img src = "https://github.com/user-attachments/assets/c74289dd-a4f9-4784-98bc-c44920f849e6">
+    <img src = "https://github.com/user-attachments/assets/1d69ef0e-953f-49d8-8ddc-c670800d9669">
+</p>
 
 <br>
 
@@ -590,3 +593,5 @@ if (createButton) {
 ### 실행 테스트하기
 
 ![image](https://github.com/user-attachments/assets/fd35f9dc-67a3-430f-ae6f-c07e894dcd9a)![image](https://github.com/user-attachments/assets/6516cc22-1667-4a76-b304-d38241124d34)![image](https://github.com/user-attachments/assets/8986ecb2-ea00-4b70-adbd-5bf12b4a2c8e)
+
+---
