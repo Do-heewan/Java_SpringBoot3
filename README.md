@@ -15,3 +15,5 @@
 ### [SpringBoot3 03 - 스프링 부트3 구조 이해하기](https://github.com/Do-heewan/Java_SpringBoot3/blob/main/TIL/03_SpringBoot3_Structure.md)
 
 ### [SpringBoot3 04 - 스프링 부트3와 테스트](https://github.com/Do-heewan/Java_SpringBoot3/blob/main/TIL/04_SpringBoot3_Test.md)
+
+### [SpringBoot3 05 - 데이터베이스 조작이 편해지는 ORM](https://github.com/Do-heewan/Java_SpringBoot3/blob/main/TIL/05_Database_ORM.md)
