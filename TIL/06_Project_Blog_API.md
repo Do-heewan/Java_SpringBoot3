@@ -2,6 +2,10 @@
 
 ![타이틀](https://github.com/user-attachments/assets/d8d23eeb-c150-4267-b5b1-856074bfe178)
 
+---
+
+<br>
+
 ## 6.0 그림으로 이해하는 프로젝트
 
 ![그림](https://github.com/user-attachments/assets/831c840c-5698-4354-a043-cbea746fab10)
@@ -74,6 +78,8 @@ public class Article {
     }
 }
 ```
+
+<br>
 
 ### 리포지터리 만들기
 
@@ -349,6 +355,8 @@ public class BlogService {
 }
 ```
 
+<br>
+
 ### 컨트롤러 메서드 코드 작성하기
 
 /api/articles/{id} DELETE 요청이 들어오면 글을 삭제하기 위한 `findArticles()` 메서드를 작성한다.
@@ -367,6 +375,8 @@ public class BlogApiController {
     }
 }
 ```
+
+<br>
 
 ### 실행 테스트하기
 
@@ -432,6 +442,8 @@ public class BlogService {
 ```
 
 ![트랜잭션](https://github.com/user-attachments/assets/2615888c-591c-4586-8353-55bf502e731c)
+
+<br>
 
 ### 컨트롤러 메서드 코드 작성하기
 
