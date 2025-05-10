@@ -17,3 +17,7 @@
 ### [SpringBoot3 04 - 스프링 부트3와 테스트](https://github.com/Do-heewan/Java_SpringBoot3/blob/main/TIL/04_SpringBoot3_Test.md)
 
 ### [SpringBoot3 05 - 데이터베이스 조작이 편해지는 ORM](https://github.com/Do-heewan/Java_SpringBoot3/blob/main/TIL/05_Database_ORM.md)
+
+### [SpringBoot3 06 - 블로그 기획하고 API 만들기](https://github.com/Do-heewan/Java_SpringBoot3/blob/main/TIL/06_Project_Blog_API.md)
+
+### [SpringBoot3 07 - 블로그 화면 구성하기](https://github.com/Do-heewan/Java_SpringBoot3/blob/main/TIL/07_Project_Blog_View.md)
