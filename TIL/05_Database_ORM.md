@@ -314,7 +314,6 @@ public void join() {
 
 ```java
 public interface MemberRepository extends JpaRepository<Member, Long> {
-
 }
 ```
 
@@ -621,7 +620,6 @@ public class Member {
 ```java
 @Entity(name = "member_list")
 public class Article {
-
 }
 ```
 
