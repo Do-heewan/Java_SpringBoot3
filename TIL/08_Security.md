@@ -4,6 +4,8 @@
 
 ---
 
+<br>
+
 ## 8.0 그림으로 이해하는 프로젝트
 
 다음은 로그인의 구조를 표현한 그림이다.
@@ -157,6 +159,8 @@ public class User implements UserDetails { // UserDetails를 상속받아 인증
 
 User 클래스가 상속한 UserDetails 클래스는 스프링 시큐리티에서 사용자의 인증 정보를 담아 두는 인터페이스이다. 스프링 시큐리티에서 해당 객체를 통해 인증 정보를 가져오려면 필수 오버라이드 메서드를 여러 개 사용해야 한다.
 
+<br>
+
 ### 리포지터리 만들기
 
 1. User 엔티티에 대한 리포지터리를 생성한다. repository 디렉터리에 `UserRepository.java` 파일을 다음과 같이 작성한다.
@@ -172,6 +176,8 @@ public interface UserRepository extends JpaRepository<User, Long> {
 ```sql
 FROM users WHERE email = #{email}
 ```
+
+<br>
 
 ### 서비스 메서드 코드 작성하기
 
@@ -263,6 +269,8 @@ public class WebSecurityConfig {
 
 시큐리티 설정이 완료 되었으니 회원 가입을 구현한다. 회원 정보를 추가하는 서비스 메서드를 작성한 뒤에 회원 가입 컨트롤러를 작성한다.
 
+<br>
+
 ### 서비스 메서드 코드 작성하기
 
 1. 사용자 정보를 담고 있는 객체 작성한다. dto 패키지에 `AddUserRequest.java` 파일을 다음과 같이 작성한다.
@@ -293,6 +301,8 @@ public class UserService {
 }
 ```
 
+<br>
+
 ### 컨트롤러 작성하기
 
 회원 가입 폼에서 회원 가입 요청을 받으면 서비스 메서드를 사용해 사용자를 저장한 뒤, 로그인 페이지로 이동하는 `signup()` 메서드를 작성한다.
@@ -321,6 +331,8 @@ public class UserApiController {
 
 회원 가입과 로그인 코드를 모두 작성했다. 사용자가 회원 가입, 로그인 경로에 접근하면 회원 가입, 로그인 화면으로 연결해주는 컨트롤러를 생성하고 사용자가 실제로 볼 수 있는 화면을 작성한다.
 
+<br>
+
 ### 뷰 컨트롤러 작성하기
 
 1. 로그인, 회원 가입 경로로 접근하면 뷰 파일을 연결하는 컨트롤러를 생성한다. controller 패키지에 `UserViewController.java` 파일을 다음과 같이 작성한다.
@@ -341,6 +353,8 @@ public class UserViewController {
 ```
 
 /login 경로로 접근하면 `login()` 메서드가 `login.html`을, /signup 경로에 접근하면 `signup()` 메서드가 `signup.html`을 반환한다.
+
+<br>
 
 ### 뷰 작성하기
 
@@ -446,6 +460,8 @@ public class UserViewController {
 
 마지막으로 로그아웃 기능을 구현한다.
 
+<br>
+
 ### 로그아웃 메서드 추가하기
 
 1. `UserApiController.java` 파일을 다음과 같이 수정한다.
@@ -472,6 +488,8 @@ public class UserApiController {
 ```
 
 /logout GET 요청을 하면 로그아웃을 담당하는 핸들러인 SecurityContextLogoutHandler의 `logout()` 메서드를 호출해서 로그아웃 한다.
+
+<br>
 
 ### 로그아웃 뷰 추가하기
 
