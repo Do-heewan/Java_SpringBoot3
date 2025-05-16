@@ -16,7 +16,7 @@ import java.util.List;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @Entity
-public class User implements UserDetails {
+public class User implements UserDetails { // UserDetails를 상속받아 인증 객체로 사용
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false)
@@ -34,36 +34,39 @@ public class User implements UserDetails {
         this.password = password;
     }
 
-    @Override
+    @Override // 권한 반환
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority("user"));
     }
 
-    @Override
+    @Override // 사용자 id를 반환(고유한 값)
     public String getUsername() {
         return email;
     }
 
-    @Override
+    @Override // 사용자의 패스워드 반환
     public String getPassword() {
         return password;
     }
 
-    @Override
+    @Override // 계정 만료 여부 반환
     public boolean isAccountNonExpired() {
         return true;
     }
 
+    // 계정 잠금 여부 반환
     @Override
     public boolean isAccountNonLocked() {
         return true;
     }
 
+    // 패스워드 만료 여부 반환
     @Override
     public boolean isCredentialsNonExpired() {
         return true;
     }
 
+    // 계정 사용 가능 여부 반환
     @Override
     public boolean isEnabled() {
         return true;
