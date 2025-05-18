@@ -10,8 +10,7 @@
 
 JWT를 도입하여 액세스 토큰, 리프레시 토큰을 사용해 토큰 유효성 검사를 하여 사용자를 인증한다. JWT를 적용한 프로젝트의 구성은 다음과 같다.
 
-![프로젝트](https://github.com/user-attachments/assets/184af730-7
-ad1-480a-ae68-a3c89580c003)
+![프로젝트](https://github.com/user-attachments/assets/184af730-7ad1-480a-ae68-a3c89580c003)
 
 ---
 
