@@ -11,16 +11,21 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserService {
     private final UserRepository userRepository;
-    private final BCryptPasswordEncoder bCryptPasswordEncoder;
+
     public Long save(AddUserRequest dto) {
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         return userRepository.save(User.builder()
                 .email(dto.getEmail())
-                .password(bCryptPasswordEncoder.encode(dto.getPassword())) // 패스워드 암호화
+                .password(encoder.encode(dto.getPassword()))
                 .build()).getId();
     }
 
     // 전달받은 유저 id로 유저를 검색해서 전달하는 메서드
     public User findById(Long userId) {
         return userRepository.findById(userId).orElseThrow(() -> new IllegalArgumentException("not found"));
+    }
+
+    public User findByEmail(String email) {
+        return userRepository.findByEmail(email).orElseThrow(() -> new IllegalArgumentException("not found"));
     }
 }

@@ -25,8 +25,12 @@ public class Article {
     @Column(name = "content", nullable = false) // 'content'라는 not null 컬럼과 매핑
     private String content;
 
+    @Column(name = "author", nullable = false)
+    private String author;
+
     @Builder // 빌더 패턴으로 객체 생성
-    public Article(String title, String content) {
+    public Article(String author, String title, String content) {
+        this.author = author;
         this.title = title;
         this.content = content;
     }
