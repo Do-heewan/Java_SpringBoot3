@@ -36,6 +36,3 @@ out/
 ### VS Code ###
 .vscode/
 .DS_Store/
-
-!**/src/main/**/*.yml
-Kakao_Login/src/main/resources/application.yml
